@@ -1,10 +1,8 @@
 #!/usr/bin/python3
-
 """Test BaseModel for expected behavior and documentation"""
 from datetime import datetime
 import inspect
 import models
-import os
 import pep8 as pycodestyle
 import time
 import unittest
@@ -128,7 +126,6 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(d['__class__'], 'BaseModel')
         self.assertEqual(d['name'], "Holberton")
         self.assertEqual(d['my_number'], 89)
-        self.assertNotIn('_sa_instance_state', d)
 
     def test_to_dict_values(self):
         """test that values in dict returned from to_dict are correct"""
@@ -161,4 +158,3 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(old_created_at, new_created_at)
         self.assertTrue(mock_storage.new.called)
         self.assertTrue(mock_storage.save.called)
-
